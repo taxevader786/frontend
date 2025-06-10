@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f0f0f;
+  color: #ddf1a5;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left, .right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  flex-direction: column;
+  text-align: center;
+  background-color: #1a1a1a;
+}
+
+.left h1 {
+  font-size: 2.5em;
+  color: #ddf1a5;
+}
+
+.left p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #ddf1a5;
+}
+
+.form-box {
+  background-color: #1f1f1f;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(221, 241, 165, 0.2);
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #ddf1a5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  text-align: left;
+  margin-bottom: 5px;
+  color: #ddf1a5;
+}
+
+input[type="email"], input[type="password"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddf1a5;
+  background-color: transparent;
+  color: #ddf1a5;
+  border-radius: 5px;
+}
+
+input::placeholder {
+  color: #ddf1a5aa;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+}
+
+.options a {
+  color: #ddf1a5;
+  text-decoration: none;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  background-color: #ddf1a5;
+  color: #0f0f0f;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.divider {
+  margin: 15px 0;
+  font-size: 0.9em;
+}
+
+.socials button {
+  margin: 0 5px;
+  padding: 10px;
+  border: 1px solid #ddf1a5;
+  background: transparent;
+  color: #ddf1a5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.bottom-text {
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+
+.bottom-text a {
+  color: #ddf1a5;
+  text-decoration: underline;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; /* or #ddf1a5 if you want a placeholder background */
+}
+
+/* Optional: If you're using <img> inside logo */
+.logo img {
+  max-width: 100%;
+  max-height: 100%;
+}

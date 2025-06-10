@@ -1,0 +1,331 @@
+:root {
+  --neon-green: #78ff63 ;
+}
+
+/* ----------------------------------------------------------
+   RESET & GLOBAL STYLES
+   ---------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px; /* Base font size */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000;
+  color: var(--neon-green); /* neon-green text */
+  overflow-x: hidden;
+}
+
+/* Utility classes for buttons */
+.btn {
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn:focus {
+  outline: 2px solid var(--neon-green);
+  outline-offset: 2px;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--neon-green);
+  border: 2px solid var(--neon-green);
+  padding: 0.5rem 1rem;
+}
+
+.btn-outline:hover {
+  background: var(--neon-green);
+  color: #000;
+}
+
+.btn-primary {
+  background-color: var(--neon-green);
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #c5d900; /* slightly darker neon */
+}
+
+.btn-icon {
+  background: transparent;
+  color: var(--neon-green);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+/* ----------------------------------------------------------
+   NAVBAR
+   ---------------------------------------------------------- */
+.navbar {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  width : auto;
+
+}
+
+
+.navbar__logo img {
+  height: 32px;
+  width: auto;
+}
+
+.navbar__brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* ----------------------------------------------------------
+   HERO SECTION
+   ---------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  /* black background with subtle grid overlay */
+  background-color: #000;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  overflow: hidden;
+}
+
+.hero__content {
+  max-width: 600px;
+  text-align: left;
+  z-index: 2;
+}
+
+.hero__title {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero__subtitle {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  color: #ccc; /* slightly dimmer than neon */
+}
+
+.waitlist-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.waitlist-form__input {
+  flex: 1 1 200px;
+  padding: 0.75rem 1rem;
+  border: 2px solid #444;
+  border-radius: 4px;
+  background: #222;
+  color: #fff;
+}
+
+.waitlist-form__input::placeholder {
+  color: #888;
+}
+
+.waitlist-form__input:focus {
+  outline: 2px solid var(--neon-green);
+}
+
+.waitlist-form__btn {
+  flex: 0 0 auto;
+}
+
+/* ----------------------------------------------------------
+   DECORATIVE RUPEE ICONS & DOTS
+   ---------------------------------------------------------- */
+.hero__decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* so clicks go “through” */
+  z-index: 1;
+}
+
+.decoration {
+  position: absolute;
+  opacity: 0.85;
+}
+
+.decoration--large {
+  top: 10%;
+  right: -10%;
+  width: 220px;
+  transform: rotate(15deg);
+}
+
+.decoration--medium {
+  bottom: 20%;
+  right: 5%;
+  width: 140px;
+  transform: rotate(-10deg);
+}
+
+.decoration--small {
+  bottom: 10%;
+  right: -5%;
+  width: 80px;
+  transform: rotate(5deg);
+}
+
+/* small floating dots */
+.decoration--dot {
+  background-color: var(--neon-green);
+  border-radius: 50%;
+}
+
+.dec-dot1 {
+  width: 12px;
+  height: 12px;
+  top: 30%;
+  left: 20%;
+  opacity: 0.6;
+}
+
+.dec-dot2 {
+  width: 8px;
+  height: 8px;
+  top: 60%;
+  left: 55%;
+  opacity: 0.5;
+}
+
+.dec-dot3 {
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 80%;
+  opacity: 0.4;
+}
+
+/* ----------------------------------------------------------
+   CAROUSEL INDICATOR (BOTTOM DOTS)
+   ---------------------------------------------------------- */
+.carousel-indicator {
+  position: absolute;
+  bottom: 7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #444;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.dot--active {
+  background-color: var(--neon-green);
+  opacity: 1;
+}
+
+/* ----------------------------------------------------------
+   FOOTER SOCIAL ICONS
+   ---------------------------------------------------------- */
+.footer-social {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.5rem;
+  z-index: 2;
+}
+
+.social-link {
+  font-size: 1.25rem;
+  color: var(--neon-green);
+  transition: color 0.2s ease;
+}
+
+.social-link:hover {
+  color: #c5d900;
+}
+
+/* ----------------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+   ---------------------------------------------------------- */
+
+/* Medium screens (≥ 600px) */
+@media (min-width: 600px) {
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  .hero__subtitle {
+    font-size: 1.125rem;
+  }
+  .waitlist-form__input {
+    font-size: 1rem;
+  }
+}
+
+/* Large screens (≥ 900px) */
+@media (min-width: 900px) {
+  .hero {
+    padding: 4rem 2rem;
+  }
+  .hero__content {
+    max-width: 800px;
+  }
+  .hero__title {
+    font-size: 3rem;
+  }
+  .hero__subtitle {
+    font-size: 1.25rem;
+  }
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  .navbar__logo img {
+    height: 40px;
+  }
+  .navbar__brand {
+    font-size: 1.5rem;
+  }
+}

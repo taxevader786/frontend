@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fein-AI – Coming Soon</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- (Optional) FontAwesome for social icons & profile/contact icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-papm6p+1w9QwQn6eQw6eQw6eQw6eQw6eQw6eQw6eQw6eQw6eQw6eQw6eQw6eQw6eQw6eQw6eQw6eQw6eQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <!-- navigation bar -->
+  <nav class="navbar">
+    <div class="navbar__logo">
+      <!-- Replace with your actual logo image or SVG -->
+    <img src="file.svg" alt="Fein-AI Logo" class="navbar__logo-img" style="width: 120px; max-width: 30vw; height: auto;" />
+    <!-- <span class="navbar__brand">Fein-AI</span> -->
+    </div>
+    <div class="navbar__actions">
+      <button class="btn btn-outline">Contact Us</button>
+      <button class="btn btn-icon">
+        <!-- User‐profile icon (FontAwesome) -->
+        <i class="fas fa-user-circle"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- main “coming soon” section -->
+  <section class="hero">
+    <div class="hero__content">
+      <h1 class="hero__title">
+        Your Financial Side-kick<br />
+        is coming soon!!
+      </h1>
+      <p class="hero__subtitle">
+        FEIN AI is on a mission to simplify and supercharge your finances using
+        cutting-edge AI. From smart budgeting to personalized investment advice —
+        we’re building the future of financial intelligence.
+      </p>
+      <form class="waitlist-form">
+        <input
+          type="email"
+          class="waitlist-form__input"
+          placeholder="Enter your email"
+          required
+        />
+        <button type="submit" class="btn btn-primary waitlist-form__btn">
+          Join Waitlist
+        </button>
+      </form>
+    </div>
+
+    <!-- decorative floating ₹ icons (absolutely positioned) -->
+    <div class="hero__decorations">
+      <!-- Replace src with your actual 3D-rupee images or SVGs -->
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/023/456/464/non_2x/inr-indian-rupees-3d-icon-isolated-on-transparent-background-gold-texture-3d-rendering-free-png.png"
+        alt="Rupee 3D"
+        class="decoration decoration--large"
+      />
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/023/456/464/non_2x/inr-indian-rupees-3d-icon-isolated-on-transparent-background-gold-texture-3d-rendering-free-png.png"
+        alt="Rupee 3D"
+        class="decoration decoration--medium"
+      />
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/023/456/464/non_2x/inr-indian-rupees-3d-icon-isolated-on-transparent-background-gold-texture-3d-rendering-free-png.png"
+        alt="Rupee 3D"
+        class="decoration decoration--small"
+      />
+      <!-- tiny floating circles -->
+      <div class="decoration decoration--dot dec-dot1"></div>
+      <div class="decoration decoration--dot dec-dot2"></div>
+      <div class="decoration decoration--dot dec-dot3"></div>
+    </div>
+  </section>
+
+  <!-- bottom carousel indicator + placeholder for additional content -->
+  <section class="carousel-indicator">
+    <span class="dot"></span>
+    <span class="dot dot--active"></span>
+    <span class="dot"></span>
+  </section>
+
+
+    <section class="features">
+      <h2 class="features__title">What We’re Building</h2>
+      <div class="features__carousel">
+        <div class="feature-item">
+          <h3>Smart Budgeting</h3>
+          <p>
+            AI-driven budgeting tools that adapt to your spending habits and
+            financial goals.
+          </p>
+        </div>
+        <div class="feature-item">
+          <h3>Personalized Investments</h3>
+          <p>
+            Tailored investment strategies based on your risk profile and market
+            trends.
+          </p>
+        </div>
+        <div class="feature-item">
+          <h3>Financial Insights</h3>
+          <p>
+            Deep insights into your financial health with actionable recommendations.
+          </p>
+        </div>
+      </div>
+    </section>
+    <style>
+      .features {
+        max-width: 900px;
+        margin: 3rem auto 2rem auto;
+        padding: 2rem 1rem;
+        background: #232323;
+        border-radius: 1.5rem;
+        box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07);
+        text-align: center;
+      }
+      .features__title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: #78ff63;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+      }
+      .features__carousel {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .feature-item {
+        flex: 1 1 220px;
+        min-width: 220px;
+        max-width: 300px;
+        background: #141414;
+        border-radius: 1rem;
+        padding: 1.5rem 1rem;
+        box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .feature-item:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 8px 32px 0 rgba(0,0,0,0.10);
+      }
+      .feature-item h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.7rem;
+        color: #78ff63;
+      }
+      .feature-item p {
+        font-size: 1rem;
+        color: #78ff63;
+        line-height: 1.5;
+      }
+
+
+      
+      @media (max-width: 700px) {
+        .features__carousel {
+          flex-direction: column;
+          gap: 1.2rem;
+        }
+        .feature-item {
+          max-width: 100%;
+        }
+        .features {
+          padding: 1.2rem 0.5rem;
+        }
+      }
+      @media (max-width: 400px) {
+        .features__title {
+          font-size: 1.3rem;
+        }
+        .feature-item h3 {
+          font-size: 1rem;
+        }
+        .feature-item p {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+
+    <footer class="footer-social">
+      <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter" class="social-link">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </footer>
+    <style>
+      :root {
+        --neon-green: #e6ff00;
+      }
+      .footer-social {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 0 1.2rem 0;
+        background: transparent;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 100;
+      }
+      .social-link {
+        color: var(--neon-green);
+        font-size: 2rem;
+        transition: color 0.2s;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .social-link:hover {
+        color: #fff;
+      }
+      @media (max-width: 700px) {
+        .footer-social {
+          gap: 1.2rem;
+          padding: 1.2rem 0 0.7rem 0;
+        }
+        .social-link {
+          font-size: 1.4rem;
+        }
+      }
+      @media (max-width: 400px) {
+        .footer-social {
+          flex-direction: column;
+          gap: 0.7rem;
+          padding: 0.7rem 0 0.5rem 0;
+        }
+        .social-link {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+</body>
+</html>
