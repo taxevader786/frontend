@@ -2,87 +2,156 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FEIN AI Survey</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FeinAI Financial Form</title>
+  </head>
 <body>
-  <div class="card">
-    <h1>Help Us Build Better</h1>
-    <p>Answer a few quick questions to help shape FEIN AI's features.</p>
+  <div class="container">
+    <div class="header">
+      <button onclick="goBack()">← Back</button>
+      <button>FeinAI</button>
+    </div>
 
-    <form id="surveyForm">
-      <label for="q1">1. What financial tool do you use most?</label>
-      <select id="q1" name="q1">
-        <option value="">Select an option</option>
-        <option>Budgeting App</option>
-        <option>Trading Platform</option>
-        <option>Crypto Wallet</option>
-        <option>Robo-Advisor</option>
-      </select>
+    <h2 class="title">Financial Health Assessment</h2>
+    <div class="step-indicator" id="stepIndicator">Step 1 of 5</div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressBar"></div>
+    </div>
 
-      <label for="q2">2. Confidence in financial decisions?</label>
-      <input type="range" id="q2" name="q2" min="1" max="5" value="3" oninput="updateLabel('q2')">
-      <div class="slider-label">
-        <span>1️⃣</span><span>2️⃣</span><span>3️⃣</span><span>4️⃣</span><span>5️⃣</span>
+    <form id="multiStepForm" novalidate>
+      
+      <div class="form-step" id="step1">
+        <div class="form-box">
+          <h3>📊 Basic Information</h3>
+          <div class="form-grid">
+            <div><label for="age">Age</label><input type="number" name="age" id="age" placeholder="Enter your age" required min="18" /></div>
+            <div><label for="salary">Annual Salary (₹)</label><input type="number" name="salary" id="salary" placeholder="Enter annual salary" required min="0"/></div>
+            <div><label for="cityIndex">City Cost Index</label>
+              <select name="cityIndex" id="cityIndex">
+                <option value="1.0">Average Cost (1.0)</option>
+                <option value="0.8">Low Cost (0.8)</option>
+                <option value="1.2">High Cost (1.2)</option>
+              </select>
+            </div>
+            <div><label for="dependents">Financial Dependents</label><input type="number" name="dependents" id="dependents" placeholder="Enter financial dependents" required min="0"/></div>
+          </div>
+        </div>
       </div>
 
-      <label for="q3">3. What's your primary financial goal?</label>
-      <select id="q3" name="q3">
-        <option value="">Select an option</option>
-        <option>Grow Wealth</option>
-        <option>Pay Off Debt</option>
-        <option>Save for a Goal</option>
-        <option>Learn Investing</option>
-      </select>
-
-      <label for="q4">4. What’s your biggest financial challenge?</label>
-      <textarea id="q4" name="q4" placeholder="Type your answer..."></textarea>
-
-      <label for="q5">5. Importance of automation in finance?</label>
-      <input type="range" id="q5" name="q5" min="1" max="5" value="3" oninput="updateLabel('q5')">
-      <div class="slider-label">
-        <span>1️⃣</span><span>2️⃣</span><span>3️⃣</span><span>4️⃣</span><span>5️⃣</span>
+      
+      <div class="form-step hidden" id="step2">
+        <div class="form-box">
+          <h3>💵 Assets & Liabilities</h3>
+          <div class="form-grid">
+            <div><label for="assets">Total Assets (₹)</label><input type="number" name="assets" id="assets" placeholder="Enter total assets (₹)" required min="0"/></div>
+            <div><label for="liabilities">Total Liabilities (₹)</label><input type="number" name="liabilities" id="liabilities" placeholder="Enter total liabilities (₹)" required min="0"/></div>
+            <div><label for="loanCount">Number of Active Loans</label><input type="number" name="loanCount" id="loanCount" placeholder="Enter number of active loans" required min="0"/></div>
+            <div><label for="emi">Annual EMI Payments (₹)</label><input type="number" name="emi" id="emi" placeholder="Enter annual emi payments (₹)" required min="0"/></div>
+          </div>
+        </div>
       </div>
 
-      <label for="q6">6. What’s your financial experience level?</label>
-      <select id="q6" name="q6">
-        <option value="">Select an option</option>
-        <option>Beginner</option>
-        <option>Intermediate</option>
-        <option>Advanced</option>
-      </select>
-
-      <label for="q7">7. How often do you monitor your investments?</label>
-      <input type="range" id="q7" name="q7" min="1" max="5" value="3" oninput="updateLabel('q7')">
-      <div class="slider-label">
-        <span>1️⃣</span><span>2️⃣</span><span>3️⃣</span><span>4️⃣</span><span>5️⃣</span>
+      
+      <div class="form-step hidden" id="step3">
+        <div class="form-box">
+          <h3>📈 Financial Details</h3>
+          <div class="form-grid">
+            <div><label for="liquidSavings">Liquid Savings (₹)</label><input type="number" name="liquidSavings" id="liquidSavings" placeholder="Enter liquid savings (₹)" required min="0"/></div>
+            <div><label for="creditScore">Credit Score (300-850)</label><input type="number" name="creditScore" id="creditScore" placeholder="Enter credit score (300-850)" min="300" max="850" required /></div>
+            <div><label for="investments">Total Investments (₹)</label><input type="number" name="investments" id="investments" placeholder="Enter total investments (₹)" required min="0"/></div>
+            <div><label for="monthlyExpenses">Monthly Expenses (₹)</label><input type="number" name="monthlyExpenses" id="monthlyExpenses" placeholder="Enter monthly expenses (₹)" required min="0"/></div>
+          </div>
+        </div>
       </div>
 
-      <label for="q8">8. Most exciting AI feature in finance?</label>
-      <select id="q8" name="q8">
-        <option value="">Select an option</option>
-        <option>Smart Stock Picks</option>
-        <option>Spending Breakdown</option>
-        <option>Goal Tracking</option>
-        <option>Real-Time Alerts</option>
-      </select>
-
-      <label for="q9">9. What features do you want in FEIN AI?</label>
-      <textarea id="q9" name="q9" placeholder="Suggest your ideas..."></textarea>
-
-      <label for="q10">10. Would you recommend FEIN AI?</label>
-      <input type="range" id="q10" name="q10" min="1" max="10" value="5" oninput="updateLabel('q10')">
-      <div class="slider-label">
-        <span>1️⃣</span><span>2️⃣</span><span>3️⃣</span><span>4️⃣</span><span>5️⃣</span><span>6️⃣</span><span>7️⃣</span><span>8️⃣</span><span>9️⃣</span><span>🔟</span>
+      
+      <div class="form-step hidden" id="step4">
+        <div class="form-box">
+          <h3>🎯 Risk & Preferences</h3>
+          <div class="form-grid">
+            <div><label for="riskTolerance">Risk Tolerance (0.0 - 1.0)</label><input type="number" name="riskTolerance" id="riskTolerance" step="0.1" min="0" max="1" placeholder="0.0 to 1.0" required /></div>
+            <div><label for="highRiskPct">High-Risk Investment % (0-100)</label><input type="number" name="highRiskPct" id="highRiskPct" min="0" max="100" placeholder="Enter high-risk investment % (0-100)" required /></div>
+            <div><label for="confidence">Financial Confidence (1-10)</label><input type="number" name="confidence" id="confidence" min="1" max="10" placeholder="1 to 10" required /></div>
+          </div>
+        </div>
       </div>
 
-      <button type="submit">Submit Survey</button>
-      <a class="skip-btn" href="#" onclick="alert('Survey skipped. Redirecting...');">Skip this survey</a>
+      
+      <div class="form-step hidden" id="step5">
+        <div class="form-box">
+          <h3>📝 Financial Habits</h3>
+          <div class="form-grid">
+            <div class="toggle-container" tabindex="0">
+              <label class="switch">
+                <input type="checkbox" name="followBudget">
+                <span class="slider"></span>
+              </label>
+              <span class="toggle-label-text">Follow Monthly Budget</span>
+            </div>
+            <div class="input-box">
+              <label for="insurance">Insurance Coverage</label>
+              <select name="insurance" id="insurance">
+                <option>None</option>
+                <option>Life</option>
+                <option>Health</option>
+                <option>Life & Health</option>
+              </select>
+            </div>
+            <div class="input-box">
+              <label for="trackingFrequency">Expense Tracking Frequency</label>
+              <select name="trackingFrequency" id="trackingFrequency">
+                <option>Never</option>
+                <option>Sometimes</option>
+                <option>Regularly</option>
+              </select>
+            </div>
+            <div class="toggle-container" tabindex="0">
+              <label class="switch">
+                <input type="checkbox" name="retirementPlan">
+                <span class="slider"></span>
+              </label>
+              <span class="toggle-label-text">Have Retirement Plan</span>
+            </div>
+            <div class="toggle-container" tabindex="0">
+              <label class="switch">
+                <input type="checkbox" name="autoInvest">
+                <span class="slider"></span>
+              </label>
+              <span class="toggle-label-text">Automate Savings/Investments</span>
+            </div>
+            <div class="toggle-container" tabindex="0">
+              <label class="switch">
+                <input type="checkbox" name="loanDefault">
+                <span class="slider"></span>
+              </label>
+              <span class="toggle-label-text">Ever Defaulted on Loan</span>
+            </div>
+            <div class="toggle-container" tabindex="0">
+              <label class="switch">
+                <input type="checkbox" name="consultAdvisor">
+                <span class="slider"></span>
+              </label>
+              <span class="toggle-label-text">Consult Financial Advisor</span>
+            </div>
+            <div class="toggle-container" tabindex="0">
+              <label class="switch">
+                <input type="checkbox" name="reviewGoals">
+                <span class="slider"></span>
+              </label>
+              <span class="toggle-label-text">Regularly Review Goals</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="actions">
+        <button type="button" id="prevBtn" onclick="goBack()">← Previous</button>
+        <button type="button" id="nextBtn" onclick="nextStep()">Next →</button>
+        <button type="submit" id="submitBtn" class="hidden">Generate Report &#128203;</button>
+        <button type="button" id="skipBtn" style="background-color: #b5ff60; color: #222; border: none; padding: 12px 30px; font-weight: bold; border-radius: 10px; cursor: pointer; transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; margin-left: 10px;">Skip Survey</button>
+      </div>
     </form>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
-
